@@ -1,0 +1,99 @@
+@import bootstrap/dist/scss/bootstrap.min
+@import utilities
+@import font-awesome/scss/font-awesome
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,900,500)
+
+$site-background-color: #172938
+$header-background-color: #f4f5f7
+$main-font: 'Roboto', sans-serif
+
+$font-color-1: #FFFFFF
+$font-color-2: #47a245
+$font-color-3: #172938
+
+body
+  background-image: url("../img/background.jpg")
+  background-repeat: no-repeat
+  background-position: center center
+  background-attachment: fixed
+  background-size: cover
+  background-color: $site-background-color
+  font-family: $main-font
+
+header
+  width: 100%
+  min-height: 122px
+  background-image: url("../img/header-background.jpg")
+  background-repeat: no-repeat
+  background-color: $header-background-color
+  margin-bottom: 50px
+
+#company-phn
+  color: $font-color-3
+  font-size: 1.375rem
+  margin-top: 50px
+  i
+    color: $font-color-2
+  a
+    color: $font-color-3
+    text-decoration: none
+    &:hover
+      color: $font-color-2
+
+#main-text
+  text-align: center
+  margin-bottom: 65px
+  h4
+    color: $font-color-1
+    font-weight: 900
+    font-size: 1.750rem
+  h1
+    color: $font-color-2
+    font-weight: 900
+    margin-top: 20px
+    margin-bottom: 35px
+    font-size: 3.438em
+  p
+    color: $font-color-1
+    font-size: 1.063rem
+
+fieldset
+  border: solid 1px #FFFFFF
+  min-height: 600px
+  legend
+    color: #FFFFFF
+    width: auto
+    margin: auto
+    padding: 0 15px
+    font-size: 2.000rem
+
+#secondary-text
+  color: $font-color-1
+  text-align: center
+  margin-top: 45px
+  font-size: 1.063rem
+  p:not(:first-child):not(:last-child)
+    margin-top: 40px
+    font-weight: bold
+  p:last-child
+    margin-top: 30px
+    font-weight: bold
+    color: $font-color-2
+    a
+      color: inherit
+      text-decoration: none
+      font-weight: inherit
+      &:hover
+        color: $font-color-1
+form
+  margin-top: 45px
+  input
+    margin-bottom: 15px
+  textarea, .g-recaptcha
+    margin-bottom: 10px
+  .btn-custom
+    background-color: $font-color-2 !important
+    color: $font-color-1
+    font-size: 1.375rem
+    &:hover
+      background-color: $font-color-3 !important
