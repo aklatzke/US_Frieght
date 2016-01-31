@@ -7038,6 +7038,9 @@ header {
   color: #172938;
   font-size: 1.375rem;
   margin-top: 50px; }
+  @media screen and (max-width: 767px) {
+    #company-phn {
+      text-align: center; } }
   #company-phn i {
     color: #47a245; }
   #company-phn a {

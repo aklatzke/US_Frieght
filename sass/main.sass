@@ -11,6 +11,8 @@ $font-color-1: #FFFFFF
 $font-color-2: #47a245
 $font-color-3: #172938
 
+$break-small: 767px
+
 body
   background-image: url("../img/background.jpg")
   background-repeat: no-repeat
@@ -32,6 +34,9 @@ header
   color: $font-color-3
   font-size: 1.375rem
   margin-top: 50px
+  @media screen and (max-width: $break-small)
+    text-align: center
+
   i
     color: $font-color-2
   a
@@ -97,3 +102,6 @@ form
     font-size: 1.375rem
     &:hover
       background-color: $font-color-3 !important
+
+
+@media (min-width: 768px)
