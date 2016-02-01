@@ -7,8 +7,6 @@ Date: 1/28/16
 Project Name: US Freight Landing Page
 */
 
-
-
 //Check if form is submitted
 //Import Database from database/connect.php
 include"database/connect.php";
@@ -36,7 +34,7 @@ if(isset($_POST['submit'])){
   //Sending validation to googles api
   $response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret='6Lfp4xYTAAAAAPpkdBSbuFxlGR-Vr0oA9l8FJIKd'&response=".$reCaptch_response));
     if($response->success==false){
-      $_SESSION['error'] ="Please varify that you are not a robot.";
+      $_SESSION['error'] ="Please verify that you are not a robot.";
       header("Location: index.php");
     }else{
       session_unset();
@@ -95,7 +93,8 @@ if(!$result == false){
 }
 
 //============SENDING TO DATABASE====================
-global $db;
+$db = ( new Connector() )->getConnection();
+
 $statement = $db->prepare("INSERT INTO users(name,email,phone,message) VALUES('$name','$email','$number','$form_message')");
 $statement->execute();
 
