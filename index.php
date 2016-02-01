@@ -8,8 +8,10 @@ Project Name: US Freight Landing Page
 */
 
 
-//Clear any errors
+
 //Check if form is submitted
+//Import Database from database/connect.php
+include"database/connect.php";
 session_start();
 if(isset($_POST['submit'])){
   $name = htmlspecialchars($_POST['name']);
@@ -91,6 +93,11 @@ if(!$result == false){
 }else{
   $_SESSION['error'] =" Sorry, request was not sent. Please try again.";
 }
+
+//============SENDING TO DATABASE====================
+global $db
+$statement = $db->prepare("INSERT INTO users(name,email,phone,message) VALUES('$name','$email','$number','$form_message')");
+$statement->execute();
 
 }else{
   //Will clear any sessions if the form has not been submitted.
