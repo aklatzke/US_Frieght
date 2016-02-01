@@ -95,7 +95,7 @@ if(!$result == false){
 }
 
 //============SENDING TO DATABASE====================
-global $db
+global $db;
 $statement = $db->prepare("INSERT INTO users(name,email,phone,message) VALUES('$name','$email','$number','$form_message')");
 $statement->execute();
 
